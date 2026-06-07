@@ -9,11 +9,14 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL,
+  credentials: true
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.json({ message: "Backend API is running" });
+  res.send("Multi Store Order Management Backend is Running 🚀");
 });
 
 export default app;
