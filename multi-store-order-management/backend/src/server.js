@@ -19,6 +19,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Multi Store Order Management Backend is Running 🚀");
 });
+app.use("/orders", orderRoutes);
 
 export default app;
 
